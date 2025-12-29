@@ -1,141 +1,33 @@
-# HFT ARBITRAG – UI SYSTEM
-
----
-
-## login.html
-
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <title>Login – HFT ARBITRAG</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8" />
+<title>Login – HFT ARBITRAG</title>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-slate-900 to-blue-900 flex items-center justify-center text-white">
 
+
 <div class="bg-slate-800/60 backdrop-blur p-10 rounded-2xl w-full max-w-md border border-slate-700">
-  <h2 class="text-3xl font-bold mb-6 text-center">تسجيل الدخول</h2>
+<h2 class="text-3xl font-bold mb-6 text-center">تسجيل الدخول</h2>
 
-  <input id="email" type="email" placeholder="البريد الإلكتروني" class="w-full mb-4 p-3 rounded bg-slate-900 border border-slate-700">
-  <input id="password" type="password" placeholder="كلمة المرور" class="w-full mb-6 p-3 rounded bg-slate-900 border border-slate-700">
 
-  <button onclick="login()" class="w-full bg-blue-600 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">دخول</button>
+<input id="email" type="email" placeholder="البريد الإلكتروني" class="w-full mb-4 p-3 rounded bg-slate-900 border border-slate-700">
+<input id="password" type="password" placeholder="كلمة المرور" class="w-full mb-6 p-3 rounded bg-slate-900 border border-slate-700">
 
-  <p class="text-center text-slate-400 mt-4">ليس لديك حساب؟ <a href="register.html" class="text-blue-400">إنشاء حساب</a></p>
+
+<button onclick="login()" class="w-full bg-blue-600 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">دخول</button>
+
+
+<p class="text-center text-slate-400 mt-4">ليس لديك حساب؟ <a href="register.html" class="text-blue-400">إنشاء حساب</a></p>
 </div>
+
 
 <script>
 async function login(){
-  localStorage.setItem('hft_token','demo_token');
-  window.location.href='dashboard.html';
+localStorage.setItem('hft_token','demo_token');
+window.location.href='dashboard.html';
 }
 </script>
 </body>
 </html>
-```
-
----
-
-## register.html
-
-```html
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <title>Register – HFT ARBITRAG</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="min-h-screen bg-gradient-to-br from-slate-900 to-purple-900 flex items-center justify-center text-white">
-
-<div class="bg-slate-800/60 backdrop-blur p-10 rounded-2xl w-full max-w-md border border-slate-700">
-  <h2 class="text-3xl font-bold mb-6 text-center">إنشاء حساب</h2>
-
-  <input type="email" placeholder="البريد الإلكتروني" class="w-full mb-4 p-3 rounded bg-slate-900 border border-slate-700">
-  <input type="password" placeholder="كلمة المرور" class="w-full mb-4 p-3 rounded bg-slate-900 border border-slate-700">
-
-  <button onclick="register()" class="w-full bg-purple-600 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">تسجيل</button>
-
-  <p class="text-center text-slate-400 mt-4">لديك حساب؟ <a href="login.html" class="text-blue-400">تسجيل دخول</a></p>
-</div>
-
-<script>
-function register(){
-  window.location.href='login.html';
-}
-</script>
-</body>
-</html>
-```
-
----
-
-## dashboard.html
-
-```html
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <title>Dashboard – HFT ARBITRAG</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-900 text-white min-h-screen">
-
-<div class="flex">
-  <aside class="w-64 bg-slate-800 min-h-screen p-6">
-    <h2 class="text-xl font-bold mb-6">HFT ARBITRAG</h2>
-    <ul class="space-y-4 text-slate-300">
-      <li>📊 Arbitrage Scanner</li>
-      <li>💰 Funding Rates</li>
-      <li>👤 Account</li>
-      <li onclick="logout()" class="cursor-pointer text-red-400">🚪 Logout</li>
-    </ul>
-  </aside>
-
-  <main class="flex-1 p-10">
-    <h1 class="text-3xl font-bold mb-6">لوحة التحكم</h1>
-
-    <div class="grid grid-cols-3 gap-6">
-      <div class="bg-slate-800 p-6 rounded-xl">رصيدك<br><span class="text-2xl font-bold">$12,450</span></div>
-      <div class="bg-slate-800 p-6 rounded-xl">الفرص النشطة<br><span class="text-2xl font-bold">18</span></div>
-      <div class="bg-slate-800 p-6 rounded-xl">الخطة<br><span class="text-2xl font-bold">PRO</span></div>
-    </div>
-
-    <div class="mt-10 bg-slate-800 p-6 rounded-xl">
-      <h3 class="text-xl font-semibold mb-4">Arbitrage Opportunities</h3>
-      <p class="text-slate-400">(واجهة وهمية – سيتم ربطها بالـ Backend)</p>
-    </div>
-
-    <div class="mt-10">
-      <a href="payment.html" class="bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-3 rounded-lg">ترقية الاشتراك</a>
-    </div>
-  </main>
-</div>
-
-<script>
-if(!localStorage.getItem('hft_token')){
-  window.location.href='login.html';
-}
-function logout(){
-  localStorage.removeItem('hft_token');
-  window.location.href='login.html';
-}
-</script>
-</body>
-</html>
-```
-
----
-
-## Stripe / USDT (Integration Ready)
-
-* Stripe Checkout (JS SDK)
-* USDT TRC20 / ERC20 (Manual + Auto Verify)
-* Plan Mapping: Free / Pro / Elite
-* Google Sheets updates plan status
-
----
-
-**النظام الآن SaaS جاهز للبيع، تشغيله مباشرة على GitHub Pages.**
