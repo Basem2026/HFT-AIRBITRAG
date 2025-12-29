@@ -1,1 +1,33 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>Register – HFT ARBITRAG</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 to-purple-900 flex items-center justify-center text-white">
+
+
+<div class="bg-slate-800/60 backdrop-blur p-10 rounded-2xl w-full max-w-md border border-slate-700">
+<h2 class="text-3xl font-bold mb-6 text-center">إنشاء حساب</h2>
+
+
+<input type="email" placeholder="البريد الإلكتروني" class="w-full mb-4 p-3 rounded bg-slate-900 border border-slate-700">
+<input type="password" placeholder="كلمة المرور" class="w-full mb-4 p-3 rounded bg-slate-900 border border-slate-700">
+
+
+<button onclick="register()" class="w-full bg-purple-600 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">تسجيل</button>
+
+
+<p class="text-center text-slate-400 mt-4">لديك حساب؟ <a href="login.html" class="text-blue-400">تسجيل دخول</a></p>
+</div>
+
+
+<script>
+function register(){
+window.location.href='login.html';
+}
+</script>
+</body>
+</html>
