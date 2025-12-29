@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>Dashboard – HFT ARBITRAG</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+
+
+<div class="flex">
+<aside class="w-64 bg-slate-800 min-h-screen p-6">
+<h2 class="text-xl font-bold mb-6">HFT ARBITRAG</h2>
+<ul class="space-y-4 text-slate-300">
+<li>📊 Arbitrage Scanner</li>
+<li>💰 Funding Rates</li>
+<li>👤 Account</li>
+<li onclick="logout()" class="cursor-pointer text-red-400">🚪 Logout</li>
+</ul>
+</aside>
+
+
+<main class="flex-1 p-10">
+<h1 class="text-3xl font-bold mb-6">لوحة التحكم</h1>
+
+
+<div class="grid grid-cols-3 gap-6">
+<div class="bg-slate-800 p-6 rounded-xl">رصيدك<br><span class="text-2xl font-bold">$12,450</span></div>
+<div class="bg-slate-800 p-6 rounded-xl">الفرص النشطة<br><span class="text-2xl font-bold">18</span></div>
+<div class="bg-slate-800 p-6 rounded-xl">الخطة<br><span class="text-2xl font-bold">PRO</span></div>
+</div>
+
+
+<div class="mt-10 bg-slate-800 p-6 rounded-xl">
+<h3 class="text-xl font-semibold mb-4">Arbitrage Opportunities</h3>
+<p class="text-slate-400">(واجهة وهمية – سيتم ربطها بالـ Backend)</p>
+</div>
+
+
+<div class="mt-10">
+<a href="payment.html" class="bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-3 rounded-lg">ترقية الاشتراك</a>
+</div>
+</main>
+</div>
+
+
+<script>
+if(!localStorage.getItem('hft_token')){
+window.location.href='login.html';
+}
+function logout(){
+localStorage.removeItem('hft_token');
+window.location.href='login.html';
+}
+</script>
+</body>
+</html>
